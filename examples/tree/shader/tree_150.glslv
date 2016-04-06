@@ -1,10 +1,12 @@
 #version 150
 
 in vec4 vertex_pos;
-in mat4 transform;
 
-out vec4 out_pos;
+uniform mat4 transform;
+
+out vec4 color;
 
 void main() {
-  out_pos = transform * vertex_pos;
+  gl_Position = transform * vertex_pos;
+  color = vec4(0.4, 0.3, 0.2, 1.0);
 }
